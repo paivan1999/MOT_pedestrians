@@ -1,4 +1,6 @@
 from io import BytesIO
+from pathlib import Path
+
 import win32clipboard
 from PIL import Image
 
@@ -20,9 +22,14 @@ def copy(path):
 
 
 def get_new_file_name(path)->str:
-    n = 0
-    with open(path, "r") as f:
-        n = int(f.read())
+    n = 1
+    if Path(path).exists():
+        with open(path, "r") as f:
+            n = int(f.read())
+            if n > 1000000:
+                raise Exception("can't name file with too big number")
+    else:
+        Path(path).touch()
     with open(path, "w") as f:
         f.write(str(n + 1))
     return f"{n}.jpg"

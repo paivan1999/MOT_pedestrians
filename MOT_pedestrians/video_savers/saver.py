@@ -2,7 +2,7 @@ import os
 
 import cv2
 
-from definitions import ROOT_DIR
+from MOT_pedestrians import ROOT_DIR
 from MOT_pedestrians.algorithms.detectors.Detectors import CompositionDetector
 
 

@@ -247,6 +247,6 @@ class CompositionDetector(BaseDetector):
                     self.customMultiTracker.pop(ind2)
                     deleted.add(ind2)
         return \
+            [bbox for _, (_, _, bbox, _) in self.customMultiTracker], \
             [confidence for _, (_, confidence, _, _) in self.customMultiTracker], \
-            [bbox for _,(_,_,bbox,_) in self.customMultiTracker],\
             [color for _,(_,_,_,color) in self.customMultiTracker]

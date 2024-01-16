@@ -2,7 +2,7 @@ import os
 
 import numpy as np
 
-from definitions import ROOT_DIR
+from MOT_pedestrians import ROOT_DIR
 from MOT_pedestrians.draw_instruments.mostly_different_colors import get_k_colors
 import cv2
 
