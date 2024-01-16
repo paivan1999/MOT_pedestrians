@@ -3,7 +3,7 @@ import os
 import cv2
 
 from definitions import ROOT_DIR
-from src.algorithms.detectors.Detectors import CompositionDetector
+from MOT_pedestrians.algorithms.detectors.Detectors import CompositionDetector
 
 
 class VideoSaver:

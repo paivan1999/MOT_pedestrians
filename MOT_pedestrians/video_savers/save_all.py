@@ -1,5 +1,5 @@
-from src.algorithms.detectors.Detectors import CompositionDetector
-from src.video_savers.saver import VideoSaver
+from MOT_pedestrians.algorithms.detectors.Detectors import CompositionDetector
+from MOT_pedestrians.video_savers.saver import VideoSaver
 l = [((8,8),0.0,0.66,1.0,1.3)]
 for el in range(1,4):
     print(el)

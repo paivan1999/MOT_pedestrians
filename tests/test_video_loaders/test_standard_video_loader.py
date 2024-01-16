@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import pytest
-from src.video_loaders.standard_video_loader import VideoLoader
+from MOT_pedestrians.video_loaders.standard_video_loader import VideoLoader
 
 @pytest.fixture
 def video_loader():

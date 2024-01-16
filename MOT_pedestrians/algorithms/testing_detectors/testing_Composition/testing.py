@@ -1,10 +1,10 @@
-from src.algorithms.detectors.Detectors import CompositionDetector
+from MOT_pedestrians.algorithms.detectors.Detectors import CompositionDetector
 import cv2
 import os
 
 from definitions import ROOT_DIR
-from src.algorithms.testing_detectors.instruments import copy, get_new_file_name
-from src.draw_instruments.instruments import showMovedWindow
+from MOT_pedestrians.algorithms.testing_detectors.instruments import copy, get_new_file_name
+from MOT_pedestrians.draw_instruments.instruments import showMovedWindow
 
 detector = CompositionDetector(
     diff_threshold1=0.0,

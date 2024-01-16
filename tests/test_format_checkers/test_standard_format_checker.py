@@ -1,6 +1,6 @@
 import pytest
 import os
-from src.format_checkers.standard_format_checker import VideoFormatChecker
+from MOT_pedestrians.format_checkers.standard_format_checker import VideoFormatChecker
 from definitions import ROOT_DIR
 
 test_video_path = os.path.join(ROOT_DIR,"data/videos_for_tests/test.mp4")

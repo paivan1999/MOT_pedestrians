@@ -2,11 +2,11 @@ import cv2
 import os
 
 from definitions import ROOT_DIR
-from src.draw_instruments.instruments import showMovedWindow
-from src.algorithms.detectors.Detectors import DefaultBasedOnMultiTrackingDetector, DefaultBasedOnHOGDetector
+from MOT_pedestrians.draw_instruments.instruments import showMovedWindow
+from MOT_pedestrians.algorithms.detectors.Detectors import DefaultBasedOnMultiTrackingDetector, DefaultBasedOnHOGDetector
 
-from src.algorithms.testing_detectors.instruments import copy
-from src.algorithms.testing_detectors.instruments import get_new_file_name
+from MOT_pedestrians.algorithms.testing_detectors.instruments import copy
+from MOT_pedestrians.algorithms.testing_detectors.instruments import get_new_file_name
 
 # Load the pre-trained HOG detector
 detector = DefaultBasedOnMultiTrackingDetector(max_count=4,winStride=(8,8))

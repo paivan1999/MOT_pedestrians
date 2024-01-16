@@ -2,11 +2,11 @@ import cv2
 import os
 
 from definitions import ROOT_DIR
-from src.draw_instruments.instruments import showMovedWindow
-from src.algorithms.detectors.Detectors import DefaultBasedOnHOGDetector
+from MOT_pedestrians.draw_instruments.instruments import showMovedWindow
+from MOT_pedestrians.algorithms.detectors.Detectors import DefaultBasedOnHOGDetector
 
-from src.algorithms.testing_detectors.instruments import copy
-from src.algorithms.testing_detectors.instruments import get_new_file_name
+from MOT_pedestrians.algorithms.testing_detectors.instruments import copy
+from MOT_pedestrians.algorithms.testing_detectors.instruments import get_new_file_name
 
 # Load the pre-trained HOG detector
 detector = DefaultBasedOnHOGDetector(winStride=(8,8))
@@ -73,7 +73,7 @@ cv2.destroyAllWindows()
 # import os
 #
 # from definitions import ROOT_DIR
-# from src.draw_instruments.instruments import showMovedWindow
+# from MOT_pedestrians.draw_instruments.instruments import showMovedWindow
 # # Load the pre-trained HOG detector
 # hog = cv2.HOGDescriptor()
 # hog.setSVMDetector(cv2.HOGDescriptor.getDefaultPeopleDetector())
