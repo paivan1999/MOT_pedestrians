@@ -21,7 +21,7 @@ class VideoSaver:
     @staticmethod
     def draw(frame):
         if VideoSaver.type == "CompositionDetector":
-            confidences, bbox_list, colors = VideoSaver.detector.detect(frame)
+            bbox_list, confidences, colors = VideoSaver.detector.detect(frame)
             for confidence, bbox, rgb in zip(confidences, bbox_list, colors):
                 # for bbox in bboxes:
                 x, y, w, h = [int(i) for i in bbox]

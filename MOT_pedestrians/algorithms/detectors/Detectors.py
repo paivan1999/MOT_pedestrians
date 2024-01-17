@@ -1,11 +1,6 @@
-import dataclasses
-import random
-
 from MOT_pedestrians.draw_instruments.mostly_different_colors import get_k_colors
 import cv2
 from abc import abstractmethod
-
-import numpy as np
 
 
 class BaseDetector:
