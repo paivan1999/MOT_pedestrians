@@ -1,4 +1,3 @@
-import pytest
 import os
 from MOT_pedestrians.format_checkers.standard_format_checker import VideoFormatChecker
 from MOT_pedestrians import ROOT_DIR

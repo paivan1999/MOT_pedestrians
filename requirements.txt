@@ -1,0 +1,7 @@
+numpy>=1.26.2
+opencv_contrib_python>=4.9.0.80
+Pillow>=10.2.0
+PyAutoGUI>=0.9.54
+pytest>=7.4.3
+pywin32>=306
+setuptools>=69.0.3
