@@ -6,5 +6,6 @@ setup(
     version="1.0",
     packages=find_packages(),
     install_requires=required,
-    package_data = {"MOT_pedestrians": ["data/*"]}
+    package_dir={"": "MOT_pedestrians"},
+    include_package_data=True
 )
