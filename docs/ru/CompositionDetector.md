@@ -1,1 +1,1 @@
-something
+* Видео [POS1.mov](/MOT_pedestrians/data/people_on_street/POS1.mov),[POS2.mov](/MOT_pedestrians/data/people_on_street/POS2.mov),[POS3.mp4](/MOT_pedestrians/data/people_on_street/POS3.mp4) можно обнаружить в папке MOT_pedestrians/data/people_on_street 
