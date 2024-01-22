@@ -16,3 +16,15 @@ MOT включает в себя решение таких задач, как о
 1. [images_for_VKR | Composition_examples | кадр обработанный детектором CompositionDetector](/examples/images_for_VKR/Composition_examples/1.jpg)
 1. [images_for_VKR | MultiTracker_examples | кадр обработанный детектором BasedOnMultiTrackerDetector](/examples/images_for_VKR/MultiTracker_examples/1.jpg)
 1. [images_for_VKR | based_on_HOG_examples | кадр обработанный детектором BasedOnHOGDetector](/examples/images_for_VKR/based_on_HOG_examples/1.jpg)
+
+Также в папке examples/videos можно найти видео полностью обработанные детектором CompositionDetector.
+Синтаксис названия на примере:
+1_wS((8, 8))_dt1(0,0)_dt2(0,4)_ct(1,3)_koeff(1,2).mp4
+* 1\. Обрабатываемое видео - POS1.mov
+* ws((8,8)) - winStride = (8,8)
+* dt1(0,0) - diff_threshold1 = 0.0
+* dt2(0,4) - diff_threshold2 = 0.4
+* ct(1,3) - confidence_threshold = 1.3
+* koeff(1,2) - not_bigger_than_by = 1.2
+
+За объяснением смысла данных параметров обращаться [сюда]()
