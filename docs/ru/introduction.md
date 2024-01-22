@@ -10,3 +10,9 @@ MOT включает в себя решение таких задач, как о
 1. Нейросетевые методы должны отсутствовать, однако должна иметься возможность дополнить имеющиеся алгоритмы нейросетевыми
 
 Данные требования полностью удовлетворены в этом репозитории.
+
+Иллюстративные примеры можно найти в папке examples
+1. [color_illustrations | 16 разнообразных цветов](/examples/color_illustrations/16_colors.jpg)
+1. [images_for_VKR | Composition_examples | кадр обработанный детектором CompositionDetector](/examples/images_for_VKR/Composition_examples/1.jpg)
+1. [images_for_VKR | MultiTracker_examples | кадр обработанный детектором BasedOnMultiTrackerDetector](/examples/images_for_VKR/MultiTracker_examples/1.jpg)
+1. [images_for_VKR | based_on_HOG_examples | кадр обработанный детектором BasedOnHOGDetector](/examples/images_for_VKR/based_on_HOG_examples/1.jpg)
