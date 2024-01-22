@@ -1,0 +1,47 @@
+# Структура
+На данный момент репозиторий имеет следующую структуру:
+* docs
+* MOT_pedestrians
+    * algorithms
+        * Detectors
+            * Detectors.py
+    * testing_detectors
+        * instruments.py
+        * test_flow.py
+    * data
+        * people_on_street
+            * …videos…
+        * videos_for_tests
+            * …videos…
+    * draw_instruments
+        * color_map_creator.py
+        * instruments.py
+        * mostly_different_colors.py
+    * format_checkers
+        * standard_format_checker.py
+    * video_loaders
+        * standard_video_loader.py
+    * video_savers
+        * save_all.py
+        * saver.py
+* examples
+    * color_illustrations
+        * …photos…
+    * images_for_VKR
+        * Composition_examples
+            * …photos…
+        * MultiTracker_examples
+            * …photos…
+        * Based_on_HOG_examples
+            * …photos…
+    * videos
+        * …videos…
+* tests
+    * test_format_checkers
+        * test_standard_format_checker.py
+    * test_video_loaders
+        * test_standard_video_loader.py
+* .gitignore
+* requirements.txt
+* setup.py
+
