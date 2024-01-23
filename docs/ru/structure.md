@@ -1,6 +1,13 @@
 # Структура
 На данный момент репозиторий имеет следующую структуру:
 * docs
+    * ru
+        * header.md
+        * introduction.md
+        * description.md
+        * structure.md
+        * CompositionDetector.md
+    * example.png
 * MOT_pedestrians
     * algorithms
         * Detectors
@@ -42,6 +49,7 @@
     * test_video_loaders
         * test_standard_video_loader.py
 * .gitignore
+* LICENSE
 * requirements.txt
 * setup.py
 
