@@ -1,3 +1,4 @@
+import time
 from pathlib import Path
 
 import os
@@ -69,7 +70,11 @@ def show_flow(wrapper:FlowWrapper, interactor:FlowInteractor, cap = None, path =
     elif not cap:
         raise Exception("you should pass video capture or path to video")
     showMovedWindow("main", -1, -1)
+    t = 0
+    n = 0
     while True:
+        t1 = time.time()
+        n += 1
         # Read the next frame
         ret, frame = cap.read()
 
@@ -78,10 +83,12 @@ def show_flow(wrapper:FlowWrapper, interactor:FlowInteractor, cap = None, path =
         wrapper.wrap(frame)
         if not interactor.interact(frame):
             break
+        t += time.time() - t1
+        print(t/n)
 
 def test_Based_On_HOG_Detector(
         cap = None,
-        path = os.path.join(ROOT_DIR,"data/people_on_street/POS2.mov"),
+        path = os.path.join(ROOT_DIR,"data/people_on_street/POS3.mp4"),
         index_path = "HOGDetector_index.txt",
         save_dir = os.path.join(ROOT_DIR,"MOT_pedestrians_examples/HOG_examples"),
         winStride = (8,8)
@@ -92,10 +99,10 @@ def test_Based_On_HOG_Detector(
 
 def test_Based_On_MultiTracker_Detector(
         cap = None,
-        path=os.path.join(ROOT_DIR, "data/people_on_street/POS2.mov"),
+        path=os.path.join(ROOT_DIR, "data/people_on_street/POS3.mp4"),
         index_path="MultiTrackerDetector_index.txt",
         save_dir=os.path.join(ROOT_DIR, "MOT_pedestrians_examples/MultiTracker_examples"),
-        max_count=4,
+        max_count=1,
         winStride=(8,8)
 ):
     wrapper = FlowWrapper(DefaultBasedOnMultiTrackingDetector(max_count=max_count,winStride=winStride))
@@ -104,7 +111,7 @@ def test_Based_On_MultiTracker_Detector(
 
 def test_CompositionDetector(
         cap = None,
-        path=os.path.join(ROOT_DIR, "data/people_on_street/POS2.mov"),
+        path=os.path.join(ROOT_DIR, "data/people_on_street/POS3.mp4"),
         index_path="CompositionDetector_index.txt",
         save_dir=os.path.join(ROOT_DIR, "MOT_pedestrians_examples/Composition_examples"),
         diff_threshold1=0.0,

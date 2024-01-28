@@ -2,35 +2,27 @@ import os
 
 import cv2
 
-from MOT_pedestrians import ROOT_DIR
+from MOT_pedestrians import ROOT_DIR, ROOT_GLOB
 from MOT_pedestrians.algorithms.detectors.Detectors import CompositionDetector
+from MOT_pedestrians.algorithms.testing_detectors.test_flow import FlowWrapper
 
 
 class VideoSaver:
     initial_cap = None
-    detector = None
+    flow_wrapper:FlowWrapper = None
     type = None
     @staticmethod
     def load(path):
         VideoSaver.initial_cap = cv2.VideoCapture(os.path.join(ROOT_DIR, path))
     @staticmethod
-    def set_detector(type, *args, **kwargs):
-        VideoSaver.type = type
-        if type == "CompositionDetector":
-            VideoSaver.detector = CompositionDetector(*args, **kwargs)
+    def set_detector(detector):
+        VideoSaver.flow_wrapper = FlowWrapper(detector)
     @staticmethod
     def draw(frame):
-        if VideoSaver.type == "CompositionDetector":
-            bbox_list, confidences, colors = VideoSaver.detector.detect(frame)
-            for confidence, bbox, rgb in zip(confidences, bbox_list, colors):
-                # for bbox in bboxes:
-                x, y, w, h = [int(i) for i in bbox]
-                bgr = tuple(reversed(rgb))
-                cv2.rectangle(frame, (x, y), (x + w, y + h), bgr, 2)
-                cv2.putText(frame, str(round(confidence, 2)), (x, y - 3), cv2.FONT_HERSHEY_SIMPLEX, 1, bgr, 2, 2)
+        VideoSaver.flow_wrapper.wrap(frame)
     @staticmethod
     def save(path):
-        out = cv2.VideoWriter(os.path.join(ROOT_DIR, path),cv2.VideoWriter.fourcc(*'mp4v'),
+        out = cv2.VideoWriter(os.path.join(ROOT_GLOB, path),cv2.VideoWriter.fourcc(*'mp4v'),
                               30,
                               (int(VideoSaver.initial_cap.get(3)),int(VideoSaver.initial_cap.get(4)))
                               )
@@ -43,7 +35,7 @@ class VideoSaver:
                 break
             VideoSaver.draw(frame)
             out.write(frame)
-            cv2.imshow("frame",frame)
+            cv2.imshow("main",frame)
             cv2.waitKey(1)
             n += 1
         out.release()

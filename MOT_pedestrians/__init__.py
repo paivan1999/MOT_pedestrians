@@ -1,2 +1,4 @@
 import pathlib
-ROOT_DIR = pathlib.Path(__file__).parent.resolve()
+path = pathlib.Path(__file__).parent
+ROOT_DIR = path.resolve()
+ROOT_GLOB = path.parent.resolve()
